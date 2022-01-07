@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Grids",
+    platforms: [.macOS(.v10_10), .iOS(.v8)],
     products: [
         .library(
             name: "Grids",
