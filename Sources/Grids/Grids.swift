@@ -46,6 +46,22 @@ public struct LinearSpace<T: BinaryFloatingPoint> {
         return(ret)
     }
     
+    /// Return the center point of the grid.
+    public subscript(_ idx: Int) -> T {
+        let halfSpace = size / T(2)
+        let halfPix = pixelSize / T(2)
+        return(center - halfSpace + halfPix + T(idx) * pixelSize)
+    }
+    
+    /// Return the edges of the grid.
+    public subscript(edges idx: Int) -> (T, T) {
+        let halfSpace = size / T(2)
+        let startPoint = center - halfSpace  + T(idx) * pixelSize
+        let endPoint = center - halfSpace + pixelSize + T(idx) * pixelSize
+        return((startPoint, endPoint))
+    }
+
+    
     /// Create a `LinearSpace` that starts at `from` and goes to `to`.
     ///
     /// Note that the ``grid`` returned will *not* include the `from` and `to` points because these define the edges and the ``grid`` method returns pixel mid points.
