@@ -1,6 +1,6 @@
 import Foundation
 
-/// A `LinearSpace` defines a 1-dimensional linear array which has a ``size``, a ``center``, and a number of pixels ``numPix``.
+/// A `LinearSpace` defines a 1-dimensional linear array which has a ``size``, a ``center``, and a number of pixels ``numPix``.  FIXME:  More here.
 ///
 /// You can define a `LinearSpace` either by its center, size, and number of pixels, or by it's start and end position.  Units are unspecified and up to the user to keep track of.
 public struct LinearSpace<T: BinaryFloatingPoint> {

@@ -1,3 +1,3 @@
 # Grids
 
-A description of this package.
+Define 1D, 2D, and 3D voxel grids.
