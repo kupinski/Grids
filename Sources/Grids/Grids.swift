@@ -71,7 +71,7 @@ public struct LinearSpace<T: BinaryFloatingPoint> {
     ///   - numPoints: The number of 1-D pixels
     public init(from: T, to: T, numPoints: Int) {
         precondition(to > from)
-        self.center = (to - from) / 2.0
+        self.center = (to + from) / 2.0
         self.numPix = numPoints
         self.size = to - from
     }
