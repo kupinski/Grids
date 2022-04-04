@@ -5,15 +5,12 @@ import PackageDescription
 
 let package = Package(
     name: "Grids",
-//    platforms: [.macOS(.v10_10), .iOS(.v8)],
     products: [
         .library(
             name: "Grids",
             targets: ["Grids"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
         .target(

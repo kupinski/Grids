@@ -3,14 +3,14 @@ import XCTest
 
 final class GridsTests: XCTestCase {
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        let z = LinearSpace(from: 1000000, to: 1000008, numPoints: 14)
-//        let z = LinearSpace(center: 0.0, size: 3.0, numPoints: 14)
-        for idx in z.grid.indices {
-            if (idx != z.grid.count - 1) {
-                print(z.grid[idx + 1] - z.grid[idx])
+        
+        for N in [2.0, 10.0, 100.0, 1000.0] {
+            let z1 = Array(stride(from: -1.0 + 1.0 / N, through: 1.0 - 1.0 / N, by: (2.0 / N)))
+            let grid1 = LinearSpace(from: -1.0, to: 1.0, numPoints: Int(N))
+            
+            let b = zip(z1, grid1.grid)
+            for vals in b {
+                XCTAssertEqual(vals.0, vals.1, accuracy: 0.00001)
             }
         }
     }
